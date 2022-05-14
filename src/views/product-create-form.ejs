@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('partials/head', {title: 'Formulario de creación'}) %>
+<%- include('partials/head', {title: 'Editando'}) %>
 <body>
 	<!-- Header -->
 	<%- include('partials/headerNavbar') %>
@@ -10,15 +10,17 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Formulario de creación de productos</h2>
+				<h2 class="products-title">Estas editando:</h2>
 			</div>
 		</div>
 		<div class="col-12">
-			<form  method="POST">
+			<form action="/products" method="POST" enctype="multipart/form-data">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="name" class="form-label">Nombre del producto:</label>
-						<input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input">
+						<input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input"
+						class="form-input">
+						
 					</div>
 					<div class="col-12 col-md-6">
 						<label for="price" class="form-label">Precio del producto:</label>
@@ -36,6 +38,15 @@
 							<option value="visited">Últimos agregados</option>
 						</select>
 					</div>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+						  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+						</div>
+						<div class="custom-file">
+						  <input type="file" name="image" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+						  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+						</div>
+					  </div>					  
 					<div class="col-12">
 						<label for="description" class="form-label">Descipción:</label>
 						<textarea name="description" id="description" class="form-input"></textarea>
@@ -53,5 +64,7 @@
 	<!-- footer -->
 	<%- include('partials/footer') %>
 	<!-- /footer -->
+	 
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>	
 </html>

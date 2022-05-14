@@ -9,21 +9,25 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 	index: (req, res) => {
 		let productsVisited = products.filter(product => product.category === "visited");
-	    let productsInsale = products.filter(product => product.category === "in-sale");
-		return res.render('index' ,{
+		let productsInSale = products.filter(product => product.category === "in-sale");
+		return res.render('index', {
+			//devuelve las categorias filtradas y la funcion 
 			productsVisited,
-			productsInsale,
+			productsInSale,
 			toThousand
+			//toThousand agrega punto cada tres digitos al precio  y se usará en la vista
 		})
 	},
 	search: (req, res) => {
-		const {keywords} = req.query;
-		let result = products.filter(product => product.name.tolowerCase().includes(keywords.tolowerCase())|| product.description.tolowerCase().includes(keywords.tolowerCase()))
-		return res.render('results',{
+		//return res.send(req.query) para ver lo que llega en el navegador
+		const keywords = req.query;
+		//keywords viene del name del input en el header para buscar
+		let result = products.filter(product => product.name.toLowerCase().includes(keywords.toLowerCase()) || product.description.toLowerCase().includes(keywords.toLowerCase()));
+		//que coincida nombre o descripcion
+		return res.render('results', {
 			result,
 			keywords,
 			toThousand
-
 		})
 	},
 };

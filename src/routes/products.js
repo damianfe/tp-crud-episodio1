@@ -9,9 +9,10 @@ const productsController = require('../controllers/productsController');
 router.get('/', productsController.index); 
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create', productsController.create); 
+router.get('/create', productsController.create);
+//carga formulario
 router.post('/create', productsController.store); 
-
+//recibe datos del formulario
 
 /*** GET ONE PRODUCT ***/ 
 router.get('/detail/:id/', productsController.detail); 
