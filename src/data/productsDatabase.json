@@ -1,7 +1,7 @@
 [
    {
       "id": 1,
-      "name": "Cafetera Moulinex Dolce Gusto 2.0",
+      "name": "Cafetera Moulinex Dolce Gusto Edited",
       "price": 1000,
       "discount": 50,
       "category": "visited",
@@ -145,11 +145,11 @@
    },
    {
       "id": 17,
-      "name": "libro",
-      "description": "las olas y el viento sucundun sucundun",
-      "price": 12000,
-      "discount": 0,
-      "image": "default-image.png",
-      "category": "in-sale"
+      "name": "Zapatillas Reebok",
+      "price": 1235,
+      "discount": 25,
+      "category": "visited",
+      "description": "muy novedoso",
+      "image": "default-image.png"
    }
 ]
